@@ -25,13 +25,15 @@ Write an efficient algorithm for the following assumptions:
 X, Y and D are integers within the range [1..1,000,000,000];
 X ≤ Y.
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
-public class JumpFrog {
+public class JumpFrog { 
 
     public static void main(String[] args) {
         int numberOfJumps = solution(1,5,1);
         System.out.printf("The answer is %s, Expected Answer is 4 %n", numberOfJumps);
         numberOfJumps = solution(10,85,30);
         System.out.printf("The answer is %s, Expected Answer is 3 %n", numberOfJumps);
+        numberOfJumps = solution(10,10,30);
+        System.out.printf("The answer is %s, Expected Answer is 0 %n", numberOfJumps);
     }
 
     public static boolean isNotDivisible(int totalDistance, int jumpDistance) {       
