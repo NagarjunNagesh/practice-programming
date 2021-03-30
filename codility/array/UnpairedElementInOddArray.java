@@ -51,6 +51,10 @@ public class UnpairedElementInOddArray {
         int[] array3 = {};
         oddOccurence = solution(array3);
         System.out.printf("Expected 0, We got %s %n", oddOccurence);
+
+        int[] array4 = {9, 3, 9, 3, 9, 7, 9};
+        oddOccurence = solution(array4);
+        System.out.printf("Expected 7, We got %s %n", oddOccurence);
     }
 
     public static int solution(int[] array) {
@@ -64,15 +68,14 @@ public class UnpairedElementInOddArray {
                 continue;
             } 
             
-            if(previousOccurence.get().intValue() == element){
-                previousOccurence = Optional.empty();
-            } else {
-                oddOccurence = Optional.of(element);
+            if(previousOccurence.get().intValue() != element){
                 break;
             }
+
+            previousOccurence = Optional.empty();
         }
 
-        if(oddOccurence.isEmpty() && previousOccurence.isPresent()) {
+        if(oddOccurence.isEmpty()) {
             oddOccurence = previousOccurence;
         } else {
             oddOccurence = Optional.of(DEFAULT_RETURN_VALUE);
