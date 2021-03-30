@@ -1,4 +1,4 @@
-package codility.chaptertwo;
+package codility.array;
 
 import java.util.Arrays;
 
