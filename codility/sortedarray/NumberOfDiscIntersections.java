@@ -42,6 +42,7 @@ int[] array = { 1, 5, 2, 1, 4, 0 };
         answer = solution(array2);
         System.out.printf("The Expected answer is 2, And the current answer is %s %n", answer);
 
+TIME COMPLEXITY - O(N*log(N)) or O(N)
 */
 public class NumberOfDiscIntersections {
     public static void main(String[] args) {
