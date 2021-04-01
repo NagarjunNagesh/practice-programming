@@ -1,6 +1,8 @@
 package codility.stacksandqueues;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
 
@@ -27,24 +29,54 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..100,000];
 each element of array H is an integer within the range [1..1,000,000,000].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
+Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+
+TIME COMPLEXITY = O(N**2)*/
 public class ManhattanBlocks {
     public static void main(String[] args) {
         int[] heights = { 8, 8, 5, 7, 9, 8, 7, 4, 8 };
-        int minimumBlocksRequired = solution(heights);
+        int minimumBlocksRequired = DequeSolution(heights);
         System.out.printf("The Expected answers is 7, The actual answer is %s %n", minimumBlocksRequired);
 
         int[] heights1 = { 8 };
-        minimumBlocksRequired = solution(heights1);
+        minimumBlocksRequired = DequeSolution(heights1);
         System.out.printf("The Expected answers is 1, The actual answer is %s %n", minimumBlocksRequired);
 
         int[] heights2 = {};
-        minimumBlocksRequired = solution(heights2);
+        minimumBlocksRequired = DequeSolution(heights2);
         System.out.printf("The Expected answers is 0, The actual answer is %s %n", minimumBlocksRequired);
 
     }
 
-    public static int solution(int[] heights) {
+    public static int DequeSolution(int[] heights) {
+        int minimumBlocksRequired = 0;
+        Deque<Integer> availableBlocks = new ArrayDeque<>();
+
+        if (heights.length == 0) {
+            return minimumBlocksRequired;
+        }
+
+        for (int i = 0; i < heights.length; i++) {
+            int height = heights[i];
+
+            while (!availableBlocks.isEmpty() && availableBlocks.peekLast() > height) {
+                availableBlocks.removeLast();
+                minimumBlocksRequired++;
+            }
+
+            if (availableBlocks.isEmpty()
+                    || (availableBlocks.peekLast() != height && !availableBlocks.contains(height))) {
+                availableBlocks.addLast(height);
+            }
+        }
+
+        // Finally add all the remaining blocks
+        minimumBlocksRequired += availableBlocks.size();
+
+        return minimumBlocksRequired;
+    }
+
+    public static int ListSolution(int[] heights) {
         int minimumBlocksRequired = 0;
         List<Integer> availableBlocks = new ArrayList<>();
         if (heights.length == 0) {
