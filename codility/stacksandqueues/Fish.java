@@ -1,8 +1,7 @@
 package codility.stacksandqueues;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /*You are given two non-empty arrays A and B consisting of N integers. Arrays A and B represent N voracious fish in a river, ordered downstream along the flow of the river.
 
@@ -43,8 +42,10 @@ each element of array B is an integer that can have one of the following values:
 the elements of A are all distinct.
 Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
 
-37% in Tests */
+TIME Complexity - O(N)*/
 public class Fish {
+    private static int UPSTREAM = 0;
+
     public static void main(String[] args) {
 
         int[] fishSize = { 4, 3, 2, 1, 5 };
@@ -78,82 +79,43 @@ public class Fish {
         System.out.printf("The expected value is 1, The actual value is %s %n", fishesAlive);
     }
 
-    // WARNING TEST RESULT 37%
     public static int solution(int[] fishSize, int[] fishDirection) {
-        int fishesAlive = fishSize.length;
-        Optional<Integer> upstreamFish = Optional.empty(), downsstreamFish = Optional.empty();
-        // All values are distinct so it is safe to assume that all are different fishes
-        List<Integer> deletedFishes = new ArrayList<>();
-
-        for (int i = 0; i < fishSize.length; i++) {
-            int AFishesDirection = fishDirection[i];
-            if (AFishesDirection == 0) {
-                upstreamFish = Optional.of(i);
+        int numberOfFishesAlive = 0;
+        Deque<Integer> fishSizesMovingUpstream = new ArrayDeque<>();
+        for (int i = fishDirection.length - 1; i >= 0; i--) {
+            int direction = fishDirection[i];
+            if (direction == UPSTREAM) {
+                fishSizesMovingUpstream.addLast(fishSize[i]);
+            } else if (fishSizesMovingUpstream.isEmpty()) {
+                // One fish permanently alive
+                numberOfFishesAlive++;
             } else {
-                downsstreamFish = Optional.of(i);
-            }
+                // Downstream fish size
+                int fishDownstreamSize = fishSize[i];
 
-            // Check is P < Q (downsstreamFish < upstreamFish)
-            // They Meet
-            if (upstreamFish.isPresent() && downsstreamFish.isPresent()
-                    && downsstreamFish.get().intValue() < upstreamFish.get().intValue()) {
-                int upstreamFishSize = fishSize[upstreamFish.get().intValue()];
-                int downstreamFishSize = fishSize[downsstreamFish.get().intValue()];
+                while (!fishSizesMovingUpstream.isEmpty()) {
+                    int fizeUpstreamSize = fishSizesMovingUpstream.getLast();
 
-                // Check if Upstream fish is bigger than the downstream fish
-                if (upstreamFishSize > downstreamFishSize) {
-                    deletedFishes.add(downsstreamFish.get());
-                    downsstreamFish = Optional.empty();
-                    fishesAlive--;
-                    continue;
-                } else {
-                    // Can assume downstream fish is bigger as all values are distinct
-                    deletedFishes.add(upstreamFish.get());
-                    upstreamFish = Optional.empty();
-                    fishesAlive--;
-                    continue;
+                    if (fishDownstreamSize > fizeUpstreamSize) {
+                        // Upstream fish is dead
+                        fishSizesMovingUpstream.removeLast();
+                    } else {
+                        // Downstream fish is dead
+                        break;
+                    }
+                }
+
+                if (fishSizesMovingUpstream.isEmpty()) {
+                    // Downstream fish is permanently alive
+                    numberOfFishesAlive++;
                 }
             }
         }
 
-        downsstreamFish = Optional.empty();
-        upstreamFish = Optional.empty();
-        for (int i = fishSize.length - 1; i >= 0; i--) {
-            int AFishesDirection = fishDirection[i];
+        // Finally all fishes moving upstream are alive
+        numberOfFishesAlive += fishSizesMovingUpstream.size();
 
-            // If it is not a deleted fish
-            if (!deletedFishes.contains(i)) {
-                if (AFishesDirection == 0) {
-                    upstreamFish = Optional.of(i);
-                } else {
-                    downsstreamFish = Optional.of(i);
-                }
-            }
-
-            // Check is P < Q (downsstreamFish < upstreamFish)
-            // They Meet
-            if (upstreamFish.isPresent() && downsstreamFish.isPresent()
-                    && downsstreamFish.get().intValue() < upstreamFish.get().intValue()) {
-                int upstreamFishSize = fishSize[upstreamFish.get().intValue()];
-                int downstreamFishSize = fishSize[downsstreamFish.get().intValue()];
-
-                // Check if Upstream fish is bigger than the downstream fish
-                if (upstreamFishSize > downstreamFishSize) {
-                    deletedFishes.add(downsstreamFish.get());
-                    downsstreamFish = Optional.empty();
-                    fishesAlive--;
-                    continue;
-                } else {
-                    // Can assume downstream fish is bigger as all values are distinct
-                    deletedFishes.add(upstreamFish.get());
-                    upstreamFish = Optional.empty();
-                    fishesAlive--;
-                    continue;
-                }
-            }
-        }
-
-        return fishesAlive;
+        return numberOfFishesAlive;
     }
 
 }
