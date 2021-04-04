@@ -18,18 +18,18 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited. 
+  
 
 TIME COMPLEXITY - O(N)
 */
 public class DistinctElementsInArray {
 
     public static void main(String[] args) {
-        int[] array = {2,1,1,2,3,1};
+        int[] array = { 2, 1, 1, 2, 3, 1 };
         int distinctNumbers = solution(array);
         System.out.printf("The answer is %s, Expected Answer is 3 %n", distinctNumbers);
     }
-    
+
     public static int solution(int[] array) {
         int[] sortedArray = Arrays.stream(array).distinct().toArray();
         return sortedArray.length;

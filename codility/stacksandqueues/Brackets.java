@@ -24,7 +24,7 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [0..200,000];
 string S consists only of the following characters: "(", "{", "[", "]", "}" and/or ")".
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
+ */
 public class Brackets {
     private static final char OPENED_CURLY_BRACKET = '{';
     private static final char OPENED_SQUARE_BRACKET = '[';

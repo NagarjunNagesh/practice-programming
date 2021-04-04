@@ -42,7 +42,7 @@ Write an efficient algorithm for the following assumptions:
 
 N and X are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..X].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+ 
 
 position value
 1 2
@@ -56,30 +56,31 @@ Do Not Use Java 8 Features as the performance test fails in codility
 */
 public class FirstCompleteSequence {
     private static int DEFAULT_VALUE = -1;
+
     public static void main(String[] args) {
-        int[] array = {1,3,1,4,2,3,5,4};
+        int[] array = { 1, 3, 1, 4, 2, 3, 5, 4 };
         int seconds = solution(5, array);
         System.out.printf("The answer is %s, Expected Answer is 6 %n", seconds);
 
-        int[] array1 = {1,2,3,4,5};
+        int[] array1 = { 1, 2, 3, 4, 5 };
         seconds = solution(4, array1);
         System.out.printf("The answer is %s, Expected Answer is 3 %n", seconds);
 
-        int[] array2 = {1,1,1,1,1};
+        int[] array2 = { 1, 1, 1, 1, 1 };
         seconds = solution(4, array2);
         System.out.printf("The answer is %s, Expected Answer is -1 %n", seconds);
 
-        int[] array3 = {1};
+        int[] array3 = { 1 };
         seconds = solution(2, array3);
         System.out.printf("The answer is %s, Expected Answer is -1 %n", seconds);
 
-        int[] array4 = {1,2,3,2,2};
+        int[] array4 = { 1, 2, 3, 2, 2 };
         seconds = solution(4, array4);
         System.out.printf("The answer is %s, Expected Answer is -1 %n", seconds);
 
         int[] array6 = new int[30001];
-        for(int i = 0; i < array6.length; i++) {
-            array6[i] = i+1;
+        for (int i = 0; i < array6.length; i++) {
+            array6[i] = i + 1;
         }
         seconds = solution(30000, array6);
         System.out.printf("The answer is %s, Expected Answer is 29999 %n", seconds);
@@ -87,8 +88,8 @@ public class FirstCompleteSequence {
     }
 
     public static int solution(int numberOfLeaves, int[] array) {
-        
-        if(array.length < numberOfLeaves) {
+
+        if (array.length < numberOfLeaves) {
             return DEFAULT_VALUE;
         }
 
@@ -96,29 +97,29 @@ public class FirstCompleteSequence {
         Integer[] positionOfThisIndexInArray = new Integer[numberOfLeaves];
         int maximumPositionalValue = DEFAULT_VALUE;
 
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             int currentElement = array[i];
 
-            if(currentElement > numberOfLeaves) {
+            if (currentElement > numberOfLeaves) {
                 continue;
             }
 
             // Only the earliest positions are stored.
-            if(positionOfThisIndexInArray[currentElement-1] == null)  {
-                positionOfThisIndexInArray[currentElement-1] = i;
+            if (positionOfThisIndexInArray[currentElement - 1] == null) {
+                positionOfThisIndexInArray[currentElement - 1] = i;
                 maximumPositionalValue = i;
             }
         }
 
         // Position Zero is never used so 1 to the number of elements
         boolean containsNull = false;
-        for(int i=0; i< positionOfThisIndexInArray.length; i++) {
-            if(positionOfThisIndexInArray[i] == null) {
+        for (int i = 0; i < positionOfThisIndexInArray.length; i++) {
+            if (positionOfThisIndexInArray[i] == null) {
                 containsNull = true;
                 break;
             }
         }
-        
+
         return containsNull ? DEFAULT_VALUE : maximumPositionalValue;
     }
 }

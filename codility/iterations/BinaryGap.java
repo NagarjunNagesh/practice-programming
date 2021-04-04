@@ -15,26 +15,36 @@ For example, given N = 1041 the function should return 5, because N has binary r
 Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..2,147,483,647].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
+ */
 
 public class BinaryGap {
     private static char ONE = '1';
 
     public static void main(String[] args) {
         int longestZerosSurroundedByOne = solution(328);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 101001000 and the answer is 2  %n", longestZerosSurroundedByOne);
+        System.out.printf("Longest Zeros is %s, Binary Representation is 101001000 and the answer is 2  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(1162);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 10010001010 and the answer is 3  %n", longestZerosSurroundedByOne);
+        System.out.printf("Longest Zeros is %s, Binary Representation is 10010001010 and the answer is 3  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(51712);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 110010100000000 and the answer is 2  %n", longestZerosSurroundedByOne);
+        System.out.printf("Longest Zeros is %s, Binary Representation is 110010100000000 and the answer is 2  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(66561);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 10000010000000001 and the answer is 9  %n", longestZerosSurroundedByOne);
+        System.out.printf("Longest Zeros is %s, Binary Representation is 10000010000000001 and the answer is 9  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(6291457);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 11000000000000000000001 and the answer is 20  %n", longestZerosSurroundedByOne);
+        System.out.printf(
+                "Longest Zeros is %s, Binary Representation is 11000000000000000000001 and the answer is 20  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(805306373);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 110000000000000000000000000101 and the answer is 25  %n", longestZerosSurroundedByOne);
+        System.out.printf(
+                "Longest Zeros is %s, Binary Representation is 110000000000000000000000000101 and the answer is 25  %n",
+                longestZerosSurroundedByOne);
         longestZerosSurroundedByOne = solution(1610612737);
-        System.out.printf("Longest Zeros is %s, Binary Representation is 1100000000000000000000000000001 and the answer is 28  %n", longestZerosSurroundedByOne);
+        System.out.printf(
+                "Longest Zeros is %s, Binary Representation is 1100000000000000000000000000001 and the answer is 28  %n",
+                longestZerosSurroundedByOne);
     }
 
     public static int solution(int number) {
@@ -44,14 +54,14 @@ public class BinaryGap {
         int currentNumberOfZeros = 0;
 
         for (char currentCharacter : binaryRepresentation.toCharArray()) {
-            if(currentCharacter == ONE) {
+            if (currentCharacter == ONE) {
                 startCalculatingZeros = true;
 
-                if(currentNumberOfZeros > longestZerosSurroundedByOne) {
+                if (currentNumberOfZeros > longestZerosSurroundedByOne) {
                     longestZerosSurroundedByOne = currentNumberOfZeros;
                 }
                 currentNumberOfZeros = 0;
-            } else if(startCalculatingZeros) {
+            } else if (startCalculatingZeros) {
                 currentNumberOfZeros++;
             }
         }

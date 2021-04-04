@@ -20,14 +20,14 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*/
+ */
 public class MissingInteger {
     public static void main(String[] args) {
-        int[] array = {1,2,3};
+        int[] array = { 1, 2, 3 };
         int missingInteger = solution(array);
         System.out.printf("The answer is %s, Expected Answer is 4 %n", missingInteger);
 
-        int[] array1 = {-1,-2,-3};
+        int[] array1 = { -1, -2, -3 };
         missingInteger = solution(array1);
         System.out.printf("The answer is %s, Expected Answer is 1 %n", missingInteger);
     }
@@ -35,11 +35,11 @@ public class MissingInteger {
     public static int solution(int[] array) {
         int missingInteger = 1;
         int[] sortedArray = Arrays.stream(array).filter(a -> a > 0).sorted().distinct().toArray();
-        
-        for(int i = 0; i < sortedArray.length; i++) {
+
+        for (int i = 0; i < sortedArray.length; i++) {
             int elementInArray = sortedArray[i];
-            
-            if(missingInteger != elementInArray) {
+
+            if (missingInteger != elementInArray) {
                 break;
             }
 

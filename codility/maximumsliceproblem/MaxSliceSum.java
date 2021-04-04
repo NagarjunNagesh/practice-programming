@@ -23,7 +23,7 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..1,000,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000];
 the result will be an integer within the range [−2,147,483,648..2,147,483,647].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited. */
+  */
 public class MaxSliceSum {
 
     public static void main(String[] args) {

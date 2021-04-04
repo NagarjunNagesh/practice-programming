@@ -39,25 +39,26 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited. */
+  */
 public class RotatingArray {
-    
+
     public static void main(String[] args) {
         int[] array = {};
         int[] result = solution(array, 4);
         System.out.printf("Input is {} and expected is {}, We got %s %n", result);
 
-        int[] array1 = {1,2,3,4};
+        int[] array1 = { 1, 2, 3, 4 };
         result = solution(array1, 4);
         System.out.printf("Input is {1,2,3,4} and expected is {1,2,3,4}, We got %s %n", result);
 
-        int[] array2 = {1,2,3,4,5,6,7,8};
+        int[] array2 = { 1, 2, 3, 4, 5, 6, 7, 8 };
         result = solution(array2, 1);
-        System.out.printf("Input is {1,2,3,4,5,6,7,8} and expected is {2,3,4,5,6,7,8,1}, We got %s %n", Arrays.toString(result));
+        System.out.printf("Input is {1,2,3,4,5,6,7,8} and expected is {2,3,4,5,6,7,8,1}, We got %s %n",
+                Arrays.toString(result));
     }
 
     public static int[] solution(int[] array, int numberOfShifts) {
-        for(int j = 0; j < numberOfShifts; j++) {
+        for (int j = 0; j < numberOfShifts; j++) {
             array = shiftElementsInArrayByOnePosition(array);
         }
 
@@ -65,19 +66,19 @@ public class RotatingArray {
     }
 
     private static int[] shiftElementsInArrayByOnePosition(int[] array) {
-        if(array.length <= 1) {
+        if (array.length <= 1) {
             return array;
         }
 
-        int positionOfLastElement = array.length -1;
+        int positionOfLastElement = array.length - 1;
         int lastElement = array[positionOfLastElement];
-        
-        for(int i=positionOfLastElement; i > 0; i--) {
-            array[i] = array[i-1]; 
+
+        for (int i = positionOfLastElement; i > 0; i--) {
+            array[i] = array[i - 1];
         }
 
         array[0] = lastElement;
-        
+
         return array;
     }
 }

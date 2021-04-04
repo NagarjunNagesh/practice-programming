@@ -53,13 +53,13 @@ Write an efficient algorithm for the following assumptions:
 
 N and M are integers within the range [1..100,000];
 each element of array A is an integer within the range [1..N + 1].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+ 
 
 TIME COMPLEXITY = O(N + M)
 */
 public class IncreaseCounters {
     public static void main(String[] args) {
-        int[] array = {3,4,4,6,1,4,4};
+        int[] array = { 3, 4, 4, 6, 1, 4, 4 };
         int[] counter = solution(5, array);
         System.out.printf("The answer is %s, Expected Answer is [3,2,2,4,2] %n", Arrays.toString(counter));
     }
@@ -69,11 +69,11 @@ public class IncreaseCounters {
         int maxValueInCounter = 0;
         int currentMinValueInCounter = 0;
 
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             int currentElement = array[i];
-            int indexPositionOfCounter = currentElement-1;
+            int indexPositionOfCounter = currentElement - 1;
 
-            if(isCurrentValueLessThanNumberOfCounters(currentElement, numberOfCounters)) {
+            if (isCurrentValueLessThanNumberOfCounters(currentElement, numberOfCounters)) {
 
                 setCounterValue(counter, currentMinValueInCounter, indexPositionOfCounter);
                 maxValueInCounter = updateMaxValueInCounter(maxValueInCounter, counter[indexPositionOfCounter]);
@@ -88,29 +88,29 @@ public class IncreaseCounters {
     }
 
     private static void setCounterValue(int[] counter, int currentMinValueInCounter, int indexPositionOfCounter) {
-        if(currentMinValueInCounter <= counter[indexPositionOfCounter]) {
+        if (currentMinValueInCounter <= counter[indexPositionOfCounter]) {
             counter[indexPositionOfCounter] += 1;
         } else {
             counter[indexPositionOfCounter] = (currentMinValueInCounter + 1);
         }
     }
 
-    public static void increaseAllCountersByMaxValue(int maxValueInCounter,int[] counter) {
-        for(int j = 0; j < counter.length; j++) {
+    public static void increaseAllCountersByMaxValue(int maxValueInCounter, int[] counter) {
+        for (int j = 0; j < counter.length; j++) {
             // Counter set to max value
-            if(counter[j] < maxValueInCounter) {
+            if (counter[j] < maxValueInCounter) {
                 counter[j] = maxValueInCounter;
             }
         }
     }
 
-    public static boolean isCurrentValueLessThanNumberOfCounters(int currentElement, int numberOfCounters){
+    public static boolean isCurrentValueLessThanNumberOfCounters(int currentElement, int numberOfCounters) {
         return currentElement <= numberOfCounters;
     }
 
     public static int updateMaxValueInCounter(int maxValueInCounter, int currentValueinCounter) {
         // Calculate Maximum Value in the counter
-        if(maxValueInCounter < currentValueinCounter) {
+        if (maxValueInCounter < currentValueinCounter) {
             maxValueInCounter = currentValueinCounter;
         }
         return maxValueInCounter;

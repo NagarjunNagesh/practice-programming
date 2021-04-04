@@ -32,7 +32,7 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [0..400,000];
 each element of array A is an integer within the range [0..200,000].
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited. 
+  
 
 TIME COMPLEXITy - O(N)*/
 public class MaxProfit {

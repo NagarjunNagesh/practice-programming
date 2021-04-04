@@ -15,7 +15,7 @@ Write an efficient algorithm for the following assumptions:
 A and B are integers within the range [0..2,000,000,000];
 K is an integer within the range [1..2,000,000,000];
 A ≤ B.
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.
+ 
 
 TIME COMPLEXITY - O(1)*/
 public class CountDivisible {

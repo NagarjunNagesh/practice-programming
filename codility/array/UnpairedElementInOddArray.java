@@ -32,19 +32,20 @@ Write an efficient algorithm for the following assumptions:
 N is an odd integer within the range [1..1,000,000];
 each element of array A is an integer within the range [1..1,000,000,000];
 all but one of the values in A occur an even number of times.
-Copyright 2009–2021 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited. */
+  */
 public class UnpairedElementInOddArray {
     private static int DEFAULT_RETURN_VALUE = 0;
+
     public static void main(String[] args) {
-        int[] array = {1,2,3,1,2,3,4};
+        int[] array = { 1, 2, 3, 1, 2, 3, 4 };
         int oddOccurence = solution(array);
         System.out.printf("Expected 4, We got %s %n", oddOccurence);
 
-        int[] array1 = {1,2,3,1,2,3};
+        int[] array1 = { 1, 2, 3, 1, 2, 3 };
         oddOccurence = solution(array1);
         System.out.printf("Expected 0, We got %s %n", oddOccurence);
 
-        int[] array2 = {3};
+        int[] array2 = { 3 };
         oddOccurence = solution(array2);
         System.out.printf("Expected 3, We got %s %n", oddOccurence);
 
@@ -52,7 +53,7 @@ public class UnpairedElementInOddArray {
         oddOccurence = solution(array3);
         System.out.printf("Expected 0, We got %s %n", oddOccurence);
 
-        int[] array4 = {9, 3, 9, 3, 9, 7, 9};
+        int[] array4 = { 9, 3, 9, 3, 9, 7, 9 };
         oddOccurence = solution(array4);
         System.out.printf("Expected 7, We got %s %n", oddOccurence);
     }
@@ -62,20 +63,20 @@ public class UnpairedElementInOddArray {
         Optional<Integer> oddOccurence = Optional.empty();
         Optional<Integer> previousOccurence = Optional.empty();
 
-        for(int element : sortedArray) {
-            if(previousOccurence.isEmpty()) {
+        for (int element : sortedArray) {
+            if (previousOccurence.isEmpty()) {
                 previousOccurence = Optional.of(element);
                 continue;
-            } 
-            
-            if(previousOccurence.get().intValue() != element){
+            }
+
+            if (previousOccurence.get().intValue() != element) {
                 break;
             }
 
             previousOccurence = Optional.empty();
         }
 
-        if(oddOccurence.isEmpty()) {
+        if (oddOccurence.isEmpty()) {
             oddOccurence = previousOccurence;
         } else {
             oddOccurence = Optional.of(DEFAULT_RETURN_VALUE);
