@@ -18,6 +18,8 @@ import java.util.Date;
  * A single string that represents a time in -hour clock format (i.e.: or ).
  * Constraints All input times are valid Sample Input 07:05:45PM Sample Output
  * 19:05:45
+ * 
+ * Time Complexity O(1)
  */
 public class TimeConversion {
     public static void main(String[] args) {
