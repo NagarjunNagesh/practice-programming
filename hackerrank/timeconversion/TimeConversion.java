@@ -20,17 +20,27 @@ import java.util.Date;
  * 19:05:45
  */
 public class TimeConversion {
-    public static void main(String[] args) throws ParseException {
-        timeConversion("12:01:45 PM");
-        timeConversion("12:01:45 AM");
-        timeConversion("1:01:45 AM");
+    public static void main(String[] args) {
+        String militaryFormat = timeConversion("12:01:45PM");
+        System.out.printf("%s%n", militaryFormat);
+        String militaryFormat2 = timeConversion("12:01:45AM");
+        System.out.printf("%s%n", militaryFormat2);
+        String militaryFormat3 = timeConversion("1:01:45AM");
+        System.out.printf("%s%n", militaryFormat3);
     }
 
-    public static void timeConversion(String s) throws ParseException {
+    public static String timeConversion(String s) {
         SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm:ss");
-        SimpleDateFormat inputFormat = new SimpleDateFormat("hh:mm:ss a");
-        Date inputDate = inputFormat.parse(s);
-        String militaryFormat = displayFormat.format(inputDate);
-        System.out.printf("%s%n", militaryFormat);
+        SimpleDateFormat inputFormat = new SimpleDateFormat("hh:mm:ssa");
+        Date inputDate;
+        try {
+            inputDate = inputFormat.parse(s);
+            String militaryFormat = displayFormat.format(inputDate);
+            return militaryFormat;
+        } catch (ParseException e) {
+            System.out.printf("%s%n", e);
+        }
+
+        return "";
     }
 }
