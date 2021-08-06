@@ -84,9 +84,10 @@ public class CaesarCipher {
     }
 
     private static int startFromA(int moveposition) {
-        if (moveposition > 25) {
+        while (moveposition > 25) {
             moveposition = moveposition - 26;
         }
+
         return moveposition;
     }
 
