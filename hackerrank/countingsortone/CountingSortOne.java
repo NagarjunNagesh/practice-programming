@@ -57,7 +57,7 @@ public class CountingSortOne {
             return new ArrayList<>();
         }
 
-        int[] countingSort = new int[arr.size()];
+        int[] countingSort = new int[100];
 
         for (int i = 0; i < arr.size(); i++) {
             int value = arr.get(i);
