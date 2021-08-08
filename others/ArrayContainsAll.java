@@ -1,9 +1,9 @@
-package spendesk;
+package others;
 
 import java.util.Arrays;
 
 /** Check if an array contains all the values of another array */
-public class Solution {
+public class ArrayContainsAll {
 
     public static void main(String[] args) {
         String[] newsPaper = {"those", "are", "newspaper", "words"};
