@@ -1,0 +1,315 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch FizzBuzz",
+            "request": "launch",
+            "mainClass": "FizzBuzz",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch RotatingArray",
+            "request": "launch",
+            "mainClass": "codility.array.RotatingArray",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch UnpairedElementInOddArray",
+            "request": "launch",
+            "mainClass": "codility.array.UnpairedElementInOddArray",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch FirstCompleteSequence",
+            "request": "launch",
+            "mainClass": "codility.countingelements.FirstCompleteSequence",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch IncreaseCounters",
+            "request": "launch",
+            "mainClass": "codility.countingelements.IncreaseCounters",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MissingInteger",
+            "request": "launch",
+            "mainClass": "codility.countingelements.MissingInteger",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PermutationCheck",
+            "request": "launch",
+            "mainClass": "codility.countingelements.PermutationCheck",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch BinaryGap",
+            "request": "launch",
+            "mainClass": "codility.iterations.BinaryGap",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Dominator",
+            "request": "launch",
+            "mainClass": "codility.leader.Dominator",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch EquiLeader",
+            "request": "launch",
+            "mainClass": "codility.leader.EquiLeader",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxDoubleSliceSum",
+            "request": "launch",
+            "mainClass": "codility.maximumsliceproblem.MaxDoubleSliceSum",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxProfit",
+            "request": "launch",
+            "mainClass": "codility.maximumsliceproblem.MaxProfit",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxSliceSum",
+            "request": "launch",
+            "mainClass": "codility.maximumsliceproblem.MaxSliceSum",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountDivisible",
+            "request": "launch",
+            "mainClass": "codility.prefixsums.CountDivisible",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch GenomicRangeQuery",
+            "request": "launch",
+            "mainClass": "codility.prefixsums.GenomicRangeQuery",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MinimumAverageTwoSlice",
+            "request": "launch",
+            "mainClass": "codility.prefixsums.MinimumAverageTwoSlice",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PassingCars",
+            "request": "launch",
+            "mainClass": "codility.prefixsums.PassingCars",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountFactors",
+            "request": "launch",
+            "mainClass": "codility.primeandcomposite.CountFactors",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Flags",
+            "request": "launch",
+            "mainClass": "codility.primeandcomposite.Flags",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MinimalPerimeterRectangle",
+            "request": "launch",
+            "mainClass": "codility.primeandcomposite.MinimalPerimeterRectangle",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DistinctElementsInArray",
+            "request": "launch",
+            "mainClass": "codility.sortedarray.DistinctElementsInArray",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MaxProductOfThreee",
+            "request": "launch",
+            "mainClass": "codility.sortedarray.MaxProductOfThreee",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch NumberOfDiscIntersections",
+            "request": "launch",
+            "mainClass": "codility.sortedarray.NumberOfDiscIntersections",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TriangleTriplet",
+            "request": "launch",
+            "mainClass": "codility.sortedarray.TriangleTriplet",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Brackets",
+            "request": "launch",
+            "mainClass": "codility.stacksandqueues.Brackets",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fish",
+            "request": "launch",
+            "mainClass": "codility.stacksandqueues.Fish",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ManhattanBlocks",
+            "request": "launch",
+            "mainClass": "codility.stacksandqueues.ManhattanBlocks",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch SingleTypeBrackets",
+            "request": "launch",
+            "mainClass": "codility.stacksandqueues.SingleTypeBrackets",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch FindTheMissingNumber",
+            "request": "launch",
+            "mainClass": "codility.timecomplexity.FindTheMissingNumber",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch JumpFrog",
+            "request": "launch",
+            "mainClass": "codility.timecomplexity.JumpFrog",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TapeEquilibrium",
+            "request": "launch",
+            "mainClass": "codility.timecomplexity.TapeEquilibrium",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuickSort",
+            "request": "launch",
+            "mainClass": "codility.utility.sort.QuickSort",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch CaesarCipher",
+            "request": "launch",
+            "mainClass": "hackerrank.caesarcipher.CaesarCipher",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch CountingSortOne",
+            "request": "launch",
+            "mainClass": "hackerrank.countingsortone.CountingSortOne",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch DiagonalDifference",
+            "request": "launch",
+            "mainClass": "hackerrank.diagonaldifference.DiagonalDifference",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch GridChallange",
+            "request": "launch",
+            "mainClass": "hackerrank.gridchallange.GridChallange",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch LonelyInteger",
+            "request": "launch",
+            "mainClass": "hackerrank.lonelyinteger.LonelyInteger",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch MinMaxSum",
+            "request": "launch",
+            "mainClass": "hackerrank.minmaxsum.MinMaxSum",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch NewYearChaos",
+            "request": "launch",
+            "mainClass": "hackerrank.newyearchaos.NewYearChaos",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch PlusMinus",
+            "request": "launch",
+            "mainClass": "hackerrank.plusminus.PlusMinus",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch SuperDigit",
+            "request": "launch",
+            "mainClass": "hackerrank.superdigit.SuperDigit",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TimeConversion",
+            "request": "launch",
+            "mainClass": "hackerrank.timeconversion.TimeConversion",
+            "projectName": "practice-programming_6a8ced8d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayContainsAll",
+            "request": "launch",
+            "mainClass": "others.ArrayContainsAll",
+            "projectName": "practice-programming_6a8ced8d"
+        }
+    ]
+}
